@@ -89,11 +89,6 @@ body {
   flex: 1;
 }
 
-.highlight-btn {
-  background: #fff59d !important;
-  color: #1a1a1a !important;
-}
-
 #fontSize {
   height: 28px;
   border-radius: 6px;

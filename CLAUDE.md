@@ -65,16 +65,21 @@ intermédiaire.
 ## Éditeur riche sans dépendance
 
 La zone `#note` est un `contenteditable` piloté par `document.execCommand`
-pour le gras/italique/souligné/titres/listes/surlignage/suppression de mise
-en forme (`src/sidepanel.js`, fonction `wireToolbar`).
+pour le gras/italique/souligné/titres/listes/suppression de mise en forme
+(`src/sidepanel.js`, fonction `wireToolbar`).
+
+Le surlignage (`hiliteColor`) a été volontairement écarté : une fois
+appliqué, il ne peut être retiré qu'en passant par « Effacer la mise en
+forme », qui supprime aussi le reste de la mise en forme (gras, titres...)
+— un piège d'UX pour un outil censé rester simple pendant une démo live.
 
 `execCommand` est **officiellement déprécié** côté spec HTML, mais reste
 implémenté et fonctionnel dans Chrome. Le choix assumé ici est de na pas
 introduire une librairie d'édition riche (Quill, TipTap, ProseMirror...) :
 - Zéro dépendance npm → zéro risque de supply-chain sur un dépôt public.
 - Pas de bundler → pas de build à maintenir pour un outil aussi simple.
-- Le besoin réel (gras/italique/titres/listes/surlignage) est entièrement
-  couvert par `execCommand`.
+- Le besoin réel (gras/italique/titres/listes) est entièrement couvert par
+  `execCommand`.
 
 Si `execCommand` est un jour retiré de Chrome, il faudra migrer vers une
 implémentation manuelle de commandes sur `Selection`/`Range`, ou introduire
@@ -170,8 +175,8 @@ python3 tools/generate_icons.py
 
 ## Vérifications manuelles avant de considérer un changement terminé
 
-- Taper du texte, appliquer gras/italique/souligné/titre/liste/surlignage,
-  vérifier le rendu et le raccourci clavier correspondant.
+- Taper du texte, appliquer gras/italique/souligné/titre/liste, vérifier
+  le rendu et le raccourci clavier correspondant.
 - Changer d'onglet dans la même fenêtre → le panneau reste ouvert avec le
   contenu intact.
 - Recharger l'extension puis rouvrir le panneau → le contenu est toujours

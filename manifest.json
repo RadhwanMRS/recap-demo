@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Recap Demo",
+  "name": "Démonstration",
   "version": "1.0.0",
   "description": "Panneau lateral pour garder sous les yeux un pense-bete riche pendant vos demos.",
   "permissions": ["storage", "sidePanel"],
@@ -8,7 +8,7 @@
     "service_worker": "src/background.js"
   },
   "action": {
-    "default_title": "Recap Demo"
+    "default_title": "Démonstration"
   },
   "side_panel": {
     "default_path": "src/sidepanel.html"
