@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Recap Demo</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="toolbar" role="toolbar" aria-label="Mise en forme">
+        <button type="button" data-cmd="bold" title="Gras (Ctrl+B)"><strong>G</strong></button>
+        <button type="button" data-cmd="italic" title="Italique (Ctrl+I)"><em>I</em></button>
+        <button type="button" data-cmd="underline" title="Souligne (Ctrl+U)"><u>S</u></button>
+        <span class="sep" aria-hidden="true"></span>
+        <button type="button" data-cmd="formatBlock" data-value="<h2>" title="Titre">H2</button>
+        <button type="button" data-cmd="formatBlock" data-value="<h3>" title="Sous-titre">H3</button>
+        <button type="button" data-cmd="formatBlock" data-value="<p>" title="Paragraphe normal">¶</button>
+        <span class="sep" aria-hidden="true"></span>
+        <button type="button" data-cmd="insertUnorderedList" title="Liste a puces">&bull;</button>
+        <button type="button" data-cmd="insertOrderedList" title="Liste numerotee">1.</button>
+        <span class="sep" aria-hidden="true"></span>
+        <button type="button" data-cmd="hiliteColor" data-value="#fff59d" title="Surligner en jaune" class="highlight-btn"></button>
+        <button type="button" data-cmd="removeFormat" title="Effacer la mise en forme">&#9099;</button>
+        <span class="spacer" aria-hidden="true"></span>
+        <select id="fontSize" title="Taille du texte" aria-label="Taille du texte">
+          <option value="small">Petit</option>
+          <option value="medium" selected>Moyen</option>
+          <option value="large">Grand</option>
+          <option value="xlarge">Tres grand</option>
+        </select>
+      </header>
+
+      <div
+        id="note"
+        class="note"
+        contenteditable="true"
+        spellcheck="true"
+        data-font-size="medium"
+        data-placeholder="Ecrivez ici le fil de votre demo..."
+      ></div>
+
+      <footer class="statusbar">
+        <span id="saveStatus" class="save-status">Enregistre</span>
+        <span id="sizeIndicator" class="size-indicator"></span>
+        <button type="button" id="clearBtn" class="danger">Tout effacer</button>
+      </footer>
+    </div>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>
