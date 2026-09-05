@@ -35,6 +35,11 @@ frappe.
 Voir [CLAUDE.md](CLAUDE.md) pour l'architecture détaillée, les décisions
 techniques et les instructions de test.
 
+## Soutenir le projet
+
+Si cette extension vous est utile, vous pouvez
+[m'offrir un café ☕](https://buymeacoffee.com/radhwan.bm).
+
 ## Licence
 
 [MIT](LICENSE)
